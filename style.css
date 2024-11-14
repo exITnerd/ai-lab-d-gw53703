@@ -1,0 +1,159 @@
+#weatherResult, #forecastResult {
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+    background-image: url("bg.jpg"); 
+}
+
+.weather-app {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #4c53af;
+    border-radius: 5px;
+    width: 250px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.current-weather {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    transition: transform 0.2s ease;
+}
+
+.current-weather:hover {
+    transform: scale(1.02); 
+}
+
+.forecast-section {
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.forecast-section h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.forecast-item {
+    flex: 1 1 120px;
+    max-width: 400px;
+    min-width: 150px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.forecast-item:hover {
+    transform: scale(0.98);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #4c53af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5d45a0;
+}
+
+/* Styl dla wąskich ekranów */
+@media (max-width: 600px) {
+    .forecast-container {
+        flex-direction: column;
+    }
+
+    .forecast-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Dodanie animacji pisania do nagłówka */
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .weather-app h5 {
+    overflow: hidden; /* Ukrywa nadmiar tekstu */
+    white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+    border-right: .15em solid white; /* Dodaje kursor "pisania" */
+    width: 0; /* Początkowa szerokość 0 */
+    animation: typing 3s steps(30) 1s forwards; /* 3s to czas animacji, 30 kroków dla liter */
+  }
+  

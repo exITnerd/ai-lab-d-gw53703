@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prognoza Pogody</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="backgroundVideo" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;"></video>
+    <div class="weather-app">
+        <h5>Prognoza pogody</h5>
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Wpisz miasto / państwo...">
+            <button onclick="fetchWeatherData()">Sprawdź prognozę</button>
+        </div>
+        <div class="weather-results">
+            <div class="result-container">
+                <div class="current-weather" id="weatherResult">
+                </div>
+                <div class="forecast-section" id="forecastResult">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
